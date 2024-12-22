@@ -1,0 +1,49 @@
+diff --git a/build/builtin/main.js b/build/builtin/main.js
+index f4dbc6e8325..9b7de8605f9 100644
+--- a/build/builtin/main.js
++++ b/build/builtin/main.js
+@@ -27,6 +27,8 @@ app.once('ready', () => {
+ 	window = new BrowserWindow({
+ 		width: 800,
+ 		height: 600,
++		transparent: true,
++		backgroundColor: "#00000000",
+ 		webPreferences: {
+ 			nodeIntegration: true,
+ 			contextIsolation: false,
+diff --git a/src/vs/platform/process/electron-main/processMainService.ts b/src/vs/platform/process/electron-main/processMainService.ts
+index d2f6bbfd98a..7831c4c416c 100644
+--- a/src/vs/platform/process/electron-main/processMainService.ts
++++ b/src/vs/platform/process/electron-main/processMainService.ts
+@@ -42,8 +42,6 @@ export class ProcessMainService implements IProcessMainService {
+ 
+ 	declare readonly _serviceBrand: undefined;
+ 
+-	private static readonly DEFAULT_BACKGROUND_COLOR = '#1E1E1E';
+-
+ 	private processExplorerWindow: BrowserWindow | null = null;
+ 	private processExplorerParentWindow: BrowserWindow | null = null;
+ 
+@@ -339,7 +337,8 @@ export class ProcessMainService implements IProcessMainService {
+ 			x: position.x,
+ 			y: position.y,
+ 			title: options.title,
+-			backgroundColor: options.backgroundColor || ProcessMainService.DEFAULT_BACKGROUND_COLOR,
++			transparent: true,
++			backgroundColor: "#00000000",
+ 			webPreferences: {
+ 				preload: FileAccess.asFileUri('vs/base/parts/sandbox/electron-sandbox/preload.js').fsPath,
+ 				additionalArguments: [`--vscode-window-config=${ipcObjectUrl.resource.toString()}`],
+diff --git a/src/vs/platform/theme/electron-main/themeMainService.ts b/src/vs/platform/theme/electron-main/themeMainService.ts
+index 3cc4fb246e1..9bee6ee46fc 100644
+--- a/src/vs/platform/theme/electron-main/themeMainService.ts
++++ b/src/vs/platform/theme/electron-main/themeMainService.ts
+@@ -184,7 +184,7 @@ export class ThemeMainService extends Disposable implements IThemeMainService {
+ 	private updateBackgroundColor(windowId: number, splash: IPartsSplash): void {
+ 		for (const window of electron.BrowserWindow.getAllWindows()) {
+ 			if (window.id === windowId) {
+-				window.setBackgroundColor(splash.colorInfo.background);
++				window.setBackgroundColor("#00000000");
+ 				break;
+ 			}
+ 		}
