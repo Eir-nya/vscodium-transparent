@@ -10,8 +10,9 @@ From [Reddit](https://www.reddit.com/r/unixporn/comments/wlowdu/oc_transparency_
 1. Clone vscodium to your desktop: `git clone https://github.com/VSCodium/vscodium`
 2. Drop these three files (`transparency.patch`, `transparent-titlebar.patch`, `transparent-workbench.patch`) inside the `patches` folder
 3. Open a terminal in the vscodium directory
-4. Follow [VSCodium's build instructions](https://github.com/VSCodium/vscodium/blob/master/docs/howto-build.md) to build. On Linux, I had to run `./build/build.sh -l`. My output appeared in a new folder `VSCodium-Linux-x64`in the project root.
-5. Open compiled VSCodium - enter folder and open `codium`
+4. Follow [VSCodium's build instructions](https://github.com/VSCodium/vscodium/blob/master/docs/howto-build.md) to build. On Linux, I had to run `./build/build.sh -l`. My output appeared in a new folder `VSCodium-Linux-x64`in the project root.  
+4a. Pro tip: If you need to compile a specific version, use `RELEASE_VERSION=1.96.2.24355 ./build/build.sh`. This is the version I tested these patches with. Use a version listed in vscodium's "Releases" page on GitHub for compatibility with [Open-SSH-Remote](https://github.com/jeanp413/open-remote-ssh/).
+5. Open compiled VSCodium - enter folder and run `codium` binary
 6. Open command palette and enter "Open User Settings (JSON)"
 7. Add some customizations that change window transparency. For instance:
 
