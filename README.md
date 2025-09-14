@@ -32,6 +32,7 @@ From [Reddit](https://www.reddit.com/r/unixporn/comments/wlowdu/oc_transparency_
 },
 ```
 The above makes the window background completely transparent. Great for testing if the patches have worked, but don't keep it forever.
+Find more options at https://code.visualstudio.com/api/references/theme-color.
 
 8. (KDE Plasma) install **[kwin-effects-forceblur](https://github.com/taj-ny/kwin-effects-forceblur)** and add the **codium** class to the forceblur tab in the better blur configuration window.
 
