@@ -16,7 +16,7 @@ From [Reddit](https://www.reddit.com/r/unixporn/comments/wlowdu/oc_transparency_
 6. Open command palette and enter "Open User Settings (JSON)"
 7. Add some customizations that change window transparency. For instance:
 
-```
+```json
 "workbench.colorCustomizations": {
     "editor.background": "#00000000",
     "titleBar.inactiveBackground": "#00000000",
@@ -25,14 +25,16 @@ From [Reddit](https://www.reddit.com/r/unixporn/comments/wlowdu/oc_transparency_
     "tab.inactiveBackground": "#00000000",
     "activityBar.background": "#00000000",
     "statusBar.background": "#00000000",
+    "statusBar.noFolderBackground":"#00000000",
     "sideBar.background": "#00000000",
     "sideBarSectionHeader.background": "#00000000",
     "editorPane.background": "#00000000",
 },
 ```
 The above makes the window background completely transparent. Great for testing if the patches have worked, but don't keep it forever.
+Find more options at https://code.visualstudio.com/api/references/theme-color.
 
-8. (KDE Plasma) add a Window Rule matching windows with name `codium`. Set "active opacity" to 99%. This will fix the background image "freezing" because the compositor still believes it's an opaque window.
+8. (KDE Plasma) install **[kwin-effects-forceblur](https://github.com/taj-ny/kwin-effects-forceblur)** and add the **codium** class to the forceblur tab in the better blur configuration window.
 
 ## If build says patches failed/corrupt patch files
 
