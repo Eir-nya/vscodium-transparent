@@ -1,5 +1,5 @@
 diff --git a/src/vs/workbench/browser/style.ts b/src/vs/workbench/browser/style.ts
-index 9f36f4a74eb..0ec9efa4b5e 100644
+index 9250ef3f280..94c7564d070 100644
 --- a/src/vs/workbench/browser/style.ts
 +++ b/src/vs/workbench/browser/style.ts
 @@ -16,7 +16,7 @@ registerThemingParticipant((theme, collector) => {

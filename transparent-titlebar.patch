@@ -1,8 +1,8 @@
 diff --git a/src/vs/workbench/browser/parts/titlebar/titlebarPart.ts b/src/vs/workbench/browser/parts/titlebar/titlebarPart.ts
-index 32dad57a218..6622fcb5080 100644
+index 743f9e6ee8b..be56f0f4e1f 100644
 --- a/src/vs/workbench/browser/parts/titlebar/titlebarPart.ts
 +++ b/src/vs/workbench/browser/parts/titlebar/titlebarPart.ts
-@@ -713,7 +713,8 @@ export class BrowserTitlebarPart extends Part implements ITitlebarPart {
+@@ -761,7 +761,8 @@ export class BrowserTitlebarPart extends Part implements ITitlebarPart {
  				// To benefit from LCD font rendering, we must ensure that we always set an
  				// opaque background color. As such, we compute an opaque color given we know
  				// the background color is the workbench background.
